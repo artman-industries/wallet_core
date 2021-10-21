@@ -708,4 +708,16 @@ class WalletApi extends Api {
     );
     return resp['data'];
   }
+
+  Future<Map<String, dynamic>> getUserDetailsFromWalletAddress(String walletAddress) async {
+    String url = 'v1/wallets/profiles/$walletAddress';
+    print('omri:: url $url');
+    Map<String, dynamic> resp = await _get(
+      url,
+      private: true,
+    );
+    print('omri:: res $resp');
+    return resp['data'];
+  }
 }
+
